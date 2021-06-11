@@ -1,17 +1,10 @@
 const router = require('express').Router();
-
-// imports our home-route
-const commentRoutes = require('./comment-routes.js');
-const postRoutes = require('./post-routes.js');
+// imports our user, post, and comment routes from the api folder
 const userRoutes = require('./user-routes.js');
-
-router.use('/comment', commentRoutes);
-router.use('/blogPost', postRoutes);
-router.use('/user', userRoutes);
-
-
-//router.use((req, res) => {
-//    res.status(404).end();
-//});
+const postRoutes = require('./post-routes.js');
+const commentRoutes = require('./comment-routes.js');
+router.use('/users', userRoutes);
+router.use('/posts', postRoutes);
+router.use('/comments', commentRoutes);
 
 module.exports = router;

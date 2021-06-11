@@ -1,0 +1,255 @@
+:root {
+    --primary: #3d5852;
+    --secondary: #86938f;
+    --tertiary: #5e877f;
+    --quatrinary: #6c6b67;
+    --light: #e3e4e3;
+    --dark: #182c23;
+    --error: rgb(228, 46, 1);
+    --border-radius: 2px;
+  }
+  
+  body {
+    font-family: cursive;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: var(--quatrinary);
+    
+  }
+  .wrapper{
+    
+    border: 2px dashed black;
+    padding: 145px;
+    background: url("https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80") no-repeat center center fixed; 
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+  }
+  
+ h1, h3{
+    color: black;
+  }
+
+  h1{
+    font-size: 75px;
+  }
+  h3{
+    font-size: 35px;
+  }
+
+  
+  a {
+    color: var(--dark);
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: inherit;
+  }
+  
+  header {
+    padding: 70px;
+    text-align: center;
+   
+   
+  }
+
+  form,div 
+  { 
+    margin-bottom: 2%;
+  } 
+  
+  form label {
+    display: block;
+  }
+  
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+  }
+  
+  aside {
+    flex: 0;
+    background-color: var(--tertiary);
+    padding: 80px;
+    text-align: left;
+    color: var(--light);
+  }
+  
+  nav {
+    display: flex;
+    
+  }
+  
+  nav a {
+    color: var(--light);
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  nav a:hover {
+    color: var(--secondary);
+    background-color: var(--dark);
+  }
+  
+  .display {
+    flex: 4;
+    background-color: #fff;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .daycare {
+    flex: 4;
+    padding: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    
+  }
+  
+  .btn-no-style {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 100%;
+    transition: color 0.1s;
+    margin-left: 16px;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  
+  /* CARDS */
+ 
+  .card {
+    margin: 20px;
+    flex: 0 1 300px;
+    border: 7px double var(--dark);
+    border-radius: 10px;
+    background-color: var(--light);
+    color: var(--dark);
+}
+   
+  .login-card {
+    margin: 0 0 20px 0;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 5px;
+    border: 3px solid var(--dark);
+    border-radius: var(--border-radius);
+    border-style: double;
+    border-width: thick;
+    background-color: #577a7c;
+    color: var(--light);
+  }
+  
+ 
+  
+  .card-body {
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: bold;
+  }
+   
+   .card-header {
+    color: var(--light);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    background-color: var(--tertiary);
+    padding: 0.625rem;
+    border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+  }
+ 
+  
+  /* LAYOUT */
+  .container {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: flex-start;
+    align-items: center;
+  }
+  
+  table{
+       border: 2px solid;       
+  }
+  thead {
+   display:flex;
+	 width:100%;
+	 background:rgb(223, 213, 213);
+   
+    }
+  
+  tr{
+    display:flex;
+   	width:100%;
+    }
+  td ,th {
+    flex: 1 1 20%;
+	  text-align:center;
+      }
+
+      .post .title span {
+        font-style: italic;
+        font-size: 90%;
+        color: #7d7d7d;
+      }
+      
+      .edit-link {
+        display: block;
+        margin: -1.5% 0 2% 0;
+      }
+      
+      .comment-form {
+        margin-bottom: 5%;
+      }
+      
+      .comment {
+        padding: 1%;
+        margin-bottom: 1%;
+      }
+      
+      .comment:nth-child(odd) {
+        background-color: #fff5eb;
+      }
+      
+      .comment .meta {
+        font-size: 90%;
+        margin-bottom: .5%;
+        opacity: .6;
+      }
+      
+      .edit-post-form {
+        margin-bottom: 5%;
+      }
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 10px;
+        
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+
+      td a {
+        word-break: break-word;
+      }
