@@ -12,9 +12,9 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/post');
       } else {
-        alert('Failed to log in.');
+        alert(response.statusText);
       }
     }
   };
@@ -34,22 +34,19 @@ const loginFormHandler = async (event) => {
       });
   
       // if sign up succeeds we will log them in
-      if (response.ok) {
-        const response = await fetch('/api/users/login', {
-          method: 'POST',
-          body: JSON.stringify({ email, password }),
-          headers: { 'Content-Type': 'application/json' },
-        });
+      // if (response.ok) {
+      //   const response = await fetch('/api/users/login', {
+      //     method: 'POST',
+      //     body: JSON.stringify({ email, password }),
+      //     headers: { 'Content-Type': 'application/json' },
+      //   });
     
         if (response.ok) {
-          document.location.replace('/');
+          document.location.replace('/post');
         } else {
-          alert('Failed to log in.');
+          alert(response.statusText);
         }
-      } else {
-        alert('Failed to sign up.');
       }
-    }
   };
   
   document
