@@ -13,21 +13,22 @@
       });
   
       // if sign up succeeds we will log them in
-      // if (response.ok) {
-      //   const response = await fetch('/api/users/login', {
-      //     method: 'POST',
-      //     body: JSON.stringify({ email, password }),
-      //     headers: { 'Content-Type': 'application/json' },
-      //   });
+      if (response.ok) {
+        const response = await fetch('/api/users/login', {
+          method: 'POST',
+          body: JSON.stringify({ email, password }),
+          headers: { 'Content-Type': 'application/json' },
+        });
     
         if (response.ok) {
-          document.location.replace('/post');
+          document.location.replace('/');
         } else {
           alert(response.statusText);
         }
       }
+    }
   };
    
   document
-    .getElementById('.signup-form')
+    .querySelector('.signup-form')
     .addEventListener('submit', signupFormHandler);
