@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
                 'date_created'
             ],
             order: [
-                ['created_at', 'DESC']
+                ['date_created', 'DESC']
             ],
             include: [{
                     model: User,
@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
                 },
                 {
                     model: Comment,
-                    attributes: ['id', 'comment', 'date_created', 'user_id'],
+                    attributes: ['id', 'post_id', 'comment', 'date_created', 'user_id'],
                     include: {
                         model: User,
                         attributes: ['username']
@@ -58,7 +58,7 @@ router.get('/:id', (req, res) => {
                 },
                 {
                     model: Comment,
-                    attributes: ['id', 'comment', 'date_created', 'user_id'],
+                    attributes: ['id','post_id', 'comment', 'date_created', 'user_id'],
                     include: {
                         model: User,
                         attributes: ['username']
