@@ -19,7 +19,7 @@ async function editFormHandler(event) {
       });
       
       if (response.ok) {
-        document.location.replace('/review/');
+        document.location.replace('/');
       } else {
         alert(response.statusText);
       }

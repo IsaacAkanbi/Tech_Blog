@@ -1,8 +1,17 @@
-{{> review-details post}}
+
 
 <!-- displaying form and comments-->
+
+<h3>Post ID: {{ post.id }}</h3>
+<h3>Title: {{ post.title }}</h3>
+<h3>Description: {{ post.description }}</h3>
+<h3>User: {{ post.user_id }}</h3>
+<h3>Username: {{ post.User.username }}</h3>
+<h3>Comments: {{ post.Comments.comment }}</h3>
+
+
 <!-- only display if logged in -->
-{{#if loggedIn}}
+{{#if logged_in}}
 <form class="comment-form">
   <div>
     <textarea class="ml-5" name="comment-body"></textarea>
@@ -15,8 +24,8 @@
 </form>
 {{/if}}
 
-{{> comments post.Comments}}
+ {{> comment }}
 
-{{#if loggedIn}}
+{{#if logged_in}}
 <script src="/js/comment.js"></script>
 {{/if}}

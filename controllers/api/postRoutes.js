@@ -40,6 +40,9 @@ router.get('/', (req, res) => {
 });
 // when a user clicks on a specific post, return all that data
 router.get('/:id', (req, res) => {
+
+    console.log(`Post ID: ${req.params.id}`)
+
     Post.findOne({
             where: {
                 id: req.params.id
@@ -64,6 +67,8 @@ router.get('/:id', (req, res) => {
             ]
         })
         .then(dbPostData => {
+
+            console.log(dbPostData);
             if (!dbPostData) {
                 res.status(404).json({ message: 'No post found with this id' });
                 return;
