@@ -33,6 +33,7 @@ router.get('/', (req, res) => {
             ]
         })
         .then(dbPostData => res.json(dbPostData.reverse()))
+        res.render('homepage', {loggedIn: req.session.loggedIn})
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -86,6 +87,12 @@ router.post('/', withAuth, (req, res) => {
     Post.create({
             title: req.body.title,
             description: req.body.description,
+            user_id: req.session.user_id,
+            include: [ {
+                model: User,
+                attributes: ['username']
+
+            }]
             
         })
         .then(dbPostData => res.json(dbPostData))

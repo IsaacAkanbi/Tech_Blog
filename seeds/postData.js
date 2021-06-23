@@ -2,15 +2,15 @@ const { Post } = require('../models');
 
 const postData = [
     {
-        title: "CSS",
-        description: "Getting the best styling framework for your apps",
+        title: "MongoDB",
+        description: "A comprehensive database management apps",
         date_created: "June 6, 2021 ",
         user_id: 1
     },
     {
         title: "CSS",
         description: "Getting the best styling framework for your apps",
-        date_created: "June 6, 2021 ",
+        date_created: "June 21, 2021 ",
         user_id: 1
     },
     {

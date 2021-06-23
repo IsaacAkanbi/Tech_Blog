@@ -12,7 +12,7 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/post');
+        document.location.replace('/homepage');
       } else {
         alert(response.statusText);
       }
@@ -42,7 +42,7 @@ const loginFormHandler = async (event) => {
       //   });
     
         if (response.ok) {
-          document.location.replace('/post');
+          document.location.replace('/homepage');
         } else {
           alert(response.statusText);
         }
@@ -53,6 +53,6 @@ const loginFormHandler = async (event) => {
     .getElementById('login-form')
     .addEventListener('submit', loginFormHandler);
   
-  // document
-  //   .getElementById('#signup-form')
-  //   .addEventListener('submit', signupFormHandler);
+  document
+    .getElementById('#signup-form')
+    .addEventListener('submit', signupFormHandler);
