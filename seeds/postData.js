@@ -11,7 +11,7 @@ const postData = [
         title: "CSS",
         description: "Getting the best styling framework for your apps",
         date_created: "June 21, 2021 ",
-        user_id: 1
+        user_id: 2
     },
     {
         title: "PYTHON",
