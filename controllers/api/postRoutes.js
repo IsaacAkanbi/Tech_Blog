@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
                 },
                 {
                     model: Comment,
-                    attributes: ['id', 'post_id', 'comment', 'date_created', 'user_id'],
+                    attributes: ['post_id', 'comment', 'date_created', 'id'],
                     include: {
                         model: User,
                         attributes: ['username']
@@ -51,7 +51,7 @@ router.get('/:id', (req, res) => {
             attributes: ['id',
                 'description',
                 'title',
-                'created_at'
+                'date_created'
             ],
             include: [{
                     model: User,
@@ -59,7 +59,7 @@ router.get('/:id', (req, res) => {
                 },
                 {
                     model: Comment,
-                    attributes: ['id','post_id', 'comment', 'date_created', 'user_id'],
+                    attributes: ['post_id', 'comment', 'date_created', 'id'],
                     include: {
                         model: User,
                         attributes: ['username']
@@ -82,12 +82,12 @@ router.get('/:id', (req, res) => {
         });
 });
 // After user submits a new post, connect user session then get above
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
     // creates a new Post model instance and calls save on it
     Post.create({
             title: req.body.title,
             description: req.body.description,
-            user_id: req.session.user_id,
+            // user_id: req.session.user_id,
             include: [ {
                 model: User,
                 attributes: ['username']
@@ -95,7 +95,10 @@ router.post('/', withAuth, (req, res) => {
             }]
             
         })
-        .then(dbPostData => res.json(dbPostData))
+        .then(dbPostData => {
+            console.log(dbPostData);
+            res.json(dbPostData)
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);

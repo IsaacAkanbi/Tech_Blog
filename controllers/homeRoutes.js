@@ -80,7 +80,7 @@ router.get("/homepage", async (req, res) => {
 router.get('/post', (req, res) => {
   Post.findAll({
     where: {
-      user_id: req.session.user_id,
+      user_id: req.session.id,
       
     },
     attributes: [

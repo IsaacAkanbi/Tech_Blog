@@ -50,7 +50,7 @@ const loginFormHandler = async (event) => {
   };
   
   document
-    .getElementById('login-form')
+    .getElementById('#login-form')
     .addEventListener('submit', loginFormHandler);
   
   document

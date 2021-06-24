@@ -10,18 +10,18 @@
   }
   
   body {
-    font-family: cursive;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background-color: var(--quatrinary);
+    background-color: rgb(red, green, blue);
     
   }
   .wrapper{
     
-    border: 2px dashed black;
-    padding: 145px;
+    /* border: 2px dashed rgba(100, 203, 221, 0.959); */
+    padding: 4px;
     background: '../public/images/techBlog.JPG'; 
    -webkit-background-size: cover;
    -moz-background-size: cover;
@@ -30,14 +30,14 @@
   }
   
  h1, h3{
-    color: black;
+    color: rgba(32, 30, 26, 0.692);
   }
 
   h1{
     font-size: 75px;
   }
   h3{
-    font-size: 35px;
+    font-size: 30px;
   }
 
   
@@ -51,10 +51,8 @@
   }
   
   header {
-    padding: 70px;
+    padding: 30px;
     text-align: center;
-   
-   
   }
 
   form,div 
