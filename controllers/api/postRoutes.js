@@ -83,6 +83,7 @@ router.get('/:id', (req, res) => {
 });
 // After user submits a new post, connect user session then get above
 router.post('/', (req, res) => {
+    console.log(req.body)
     // creates a new Post model instance and calls save on it
     Post.create({
             title: req.body.title,
@@ -105,7 +106,7 @@ router.post('/', (req, res) => {
         });
 });
 // when user clicks 'update' button, replace post-id data with new
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id', (req, res) => {
 // Update multiple instances that match the where options
     Post.update({
 // hash of values to update
