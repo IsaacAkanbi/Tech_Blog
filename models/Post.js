@@ -18,11 +18,11 @@ Post.init(
     description: {
       type: DataTypes.STRING,
     },
-    // date_created: {
-    //   type: DataTypes.DATE,
-    //   allowNull: false,
-    //   defaultValue: DataTypes.NOW,
-    // },
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
     // user_id: {
     //   type: DataTypes.INTEGER,
     //   references: {
@@ -33,7 +33,7 @@ Post.init(
   },
   {
     sequelize,
-    // timestamps: false,
+    // timestamps: false,   --> created_at  & updated_at
     // freezeTableName: true,
     // underscored: true,
     // modelName: 'Post',

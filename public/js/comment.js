@@ -15,9 +15,10 @@ async function newFormHandler(event) {
                 'Content-Type': 'application/json'
             }
         });
-    console.log(content, post_id)
 
-        // document.location.reload();
+        console.log(content, post_id)
+
+        document.location.reload();
     }
     // const response = await 
 

@@ -7,8 +7,6 @@
 <h3>Description: {{ post.description }}</h3>
 <h3>User: {{ post.user_id }}</h3>
 <h3>Username: {{ post.User.username }}</h3>
-<h3>Comments: {{ post.Comments.comment }}</h3>
-
 
 <!-- only display if logged in -->
 {{#if logged_in}}
@@ -25,7 +23,7 @@
 </form>
 {{/if}}
 
- {{> comment-post }}
+ {{> comment-post comment=post.Comments}}
 
 {{#if logged_in}}
 <script src="/js/comment.js"></script>

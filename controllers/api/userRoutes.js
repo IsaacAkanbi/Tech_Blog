@@ -11,23 +11,26 @@ router.post('/', async (req, res) => {
      // id: req.body.id,
     });
 
-    console.log(dbUserData);
+    let newUser = dbUserData.dataValues;
+    console.log(dbUserData.dataValues);
 
     req.session.save(() => {
-      req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
+      req.session.user_id = dbUserData.dataValues.id;
+      req.session.username = dbUserData.dataValues.username;
       req.session.loggedIn = true; 
+
+      console.log(req.session);
     
     res
       .status(200)
-      .json({ user: dbUserData, message: 'You are now logged in!' });
+      .json({ user: newUser, message: 'You are now logged in!' });
       })
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
-// Login
+// Login  Path --> /api/users/login
 router.post('/login', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
@@ -43,7 +46,10 @@ router.post('/login', async (req, res) => {
     }
 
     console.log('emails match');
-    const validPassword = await dbUserData.checkPassword(req.body.password);
+    console.log(dbUserData)
+
+
+    const validPassword = await dbUserData.dataValues.checkPassword(req.body.password);
     if (!validPassword) {
       res
         .status(400)
@@ -51,12 +57,12 @@ router.post('/login', async (req, res) => {
       return;
     }
     req.session.save(() => {
-        req.session.user_id = dbUserData.id;
-        req.session.username = dbUserData.username;
+        req.session.user_id = dbUserData.dataValues.id;
+        req.session.username = dbUserData.dataValues.username;
         req.session.loggedIn = true;  
       res
         .status(200)
-        .json({ user: dbUserData, message: 'You are now logged in!' });
+        .json({ user: dbUserData.dataValues, message: 'You are now logged in!' });
     });
   } catch (err) {
     console.log(err);
