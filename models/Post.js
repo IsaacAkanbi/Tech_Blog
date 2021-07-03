@@ -23,20 +23,15 @@ Post.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    // user_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'User',
-    //     key: 'id',
-    //   },
-    // },
+  
   },
+
   {
     sequelize,
-    // timestamps: false,   --> created_at  & updated_at
+    // timestamps: false,  
     // freezeTableName: true,
     // underscored: true,
-    // modelName: 'Post',
+    // modelName: 'Post'
   }
 );
 
