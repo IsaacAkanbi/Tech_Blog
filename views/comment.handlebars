@@ -2,11 +2,11 @@
 
 <!-- displaying form and comments-->
 
-<h3>Post ID: {{ post.id }}</h3>
-<h3>Title: {{ post.title }}</h3>
-<h3>Description: {{ post.description }}</h3>
-<h3>User: {{ post.user_id }}</h3>
-<h3>Username: {{ post.User.username }}</h3>
+<p>Post ID: {{ post.id }}</p>
+<h3> {{ post.title }}</h3>
+<p> {{ post.description }}</p>
+{{!-- <p>User : {{ post.user_id }}</p> --}}
+<p>Username: {{ post.User.username }}</p>
 
 <!-- only display if logged in -->
 {{#if logged_in}}
