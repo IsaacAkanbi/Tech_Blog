@@ -1,6 +1,6 @@
-
-
 <!-- displaying form and comments-->
+
+<a href="/homepage" class="is-pulled-right"> &larr; Return to Home</a>
 
 <p>Post ID: {{ post.id }}</p>
 <h3> {{ post.title }}</h3>
@@ -9,7 +9,7 @@
 <p>Username: {{ post.User.username }}</p>
 
 <!-- only display if logged in -->
-{{#if logged_in}}
+{{#if loggedIn}}
 <form class="comment-form">
   <div>
     <input type="hidden" id="post-id" value='{{post.id}}' />
@@ -25,6 +25,6 @@
 
  {{> comment-post comment=post.Comments}}
 
-{{#if logged_in}}
+{{#if loggedIn}}
 <script src="/js/comment.js"></script>
 {{/if}}

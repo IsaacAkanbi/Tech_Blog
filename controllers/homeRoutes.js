@@ -154,7 +154,7 @@ router.get("/post/:id", async (req, res) => {
 
     res.render("comment", {
       post,
-      logged_in: req.session.loggedIn,
+      loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     res.status(500).json(err);

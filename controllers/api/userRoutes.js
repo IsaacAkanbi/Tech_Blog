@@ -11,19 +11,19 @@ router.post('/', async (req, res) => {
      // id: req.body.id,
     });
 
-    let newUser = dbUserData.dataValues;
-    console.log(dbUserData.dataValues);
+    // let newUser = dbUserData.dataValues;
+    // console.log(dbUserData.dataValues);
 
     req.session.save(() => {
-      req.session.user_id = dbUserData.dataValues.id;
-      req.session.username = dbUserData.dataValues.username;
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
       req.session.loggedIn = true; 
 
       console.log(req.session);
     
     res
       .status(200)
-      .json({ user: newUser, message: 'You are now logged in!' });
+      .json({ user: dbUserData, message: 'You are now logged in!' });
       })
   } catch (err) {
     console.log(err);
@@ -49,7 +49,7 @@ router.post('/login', async (req, res) => {
     console.log(dbUserData)
 
 
-    const validPassword = await dbUserData.dataValues.checkPassword(req.body.password);
+    const validPassword = await dbUserData.checkPassword(req.body.password);
     if (!validPassword) {
       res
         .status(400)
@@ -57,12 +57,12 @@ router.post('/login', async (req, res) => {
       return;
     }
     req.session.save(() => {
-        req.session.user_id = dbUserData.dataValues.id;
-        req.session.username = dbUserData.dataValues.username;
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
         req.session.loggedIn = true;  
       res
         .status(200)
-        .json({ user: dbUserData.dataValues, message: 'You are now logged in!' });
+        .json({ user: dbUserData, message: 'You are now logged in!' });
     });
   } catch (err) {
     console.log(err);
